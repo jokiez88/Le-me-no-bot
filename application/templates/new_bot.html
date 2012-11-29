@@ -1,0 +1,99 @@
+<div class="modal fade" id="new-bot-modal">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h3>Add a New Bot</h3>
+    </div>
+    <div class="modal-body">
+        <form id="new-bot-form" class="well form-horizontal"
+            action="{{ url_for('list_bots') }}" method="post" accept-charset="utf-8">
+            <fieldset>
+                {{ form.hidden_tag() }}
+                <div class="control-group">
+                    <div class="control-label">{{ form.bot_username.label }}</div>
+                    <div class="controls">
+                        {{ form.bot_username|safe }}
+                        {% if form.bot_username.errors %}
+                        <ul class="errors">
+                            {% for error in form.bot_username.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="control-label">{{ form.consumer_key.label }}</div>
+                    <div class="controls">
+                        {{ form.consumer_key|safe }}
+                        {% if form.consumer_key.errors %}
+                        <ul class="errors">
+                            {% for error in form.consumer_key.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="control-label">{{ form.consumer_secret.label }}</div>
+                    <div class="controls">
+                        {{ form.consumer_secret|safe }}
+                        {% if form.consumer_secret.errors %}
+                        <ul class="errors">
+                            {% for error in form.consumer_secret.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="control-label">{{ form.access_token.label }}</div>
+                    <div class="controls">
+                        {{ form.access_token|safe }}
+                        {% if form.access_token.errors %}
+                        <ul class="errors">
+                            {% for error in form.access_token.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="control-label">{{ form.access_token_secret.label }}</div>
+                    <div class="controls">
+                        {{ form.access_token_secret|safe }}
+                        {% if form.access_token_secret.errors %}
+                        <ul class="errors">
+                            {% for error in form.access_token_secret.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="control-label">{{ form.keywords.label }}</div>
+                    <div class="controls">
+                        {{ form.keywords|safe }}
+                        {% if form.keywords.errors %}
+                        <ul class="errors">
+                            {% for error in form.keywords.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <input class="btn btn-primary" type="submit" value="Add Bot"/>
+                        <button class="btn" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
