@@ -33,8 +33,3 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
-
-# Project specific stuff
-twython_src
-secret_keys.py
-t.json
